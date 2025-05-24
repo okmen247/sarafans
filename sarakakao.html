@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>카카오톡 안내</title>
+  <!-- 파비콘 -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FEE500'%3E%3Cpath d='M12 2C6.48 2 2 5.58 2 10c0 2.86 1.89 5.38 4.68 6.84L6.5 22l4.69-2.34c.27.02.54.04.81.04 5.52 0 10-3.58 10-8S17.52 2 12 2z'/%3E%3C/svg%3E">
+  <link rel="alternate icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAdgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAANUSURBVFiFtZdPaxNBFMafmWw2aZq0Nv6hVbQe9OBBwYMgeCh48ODFixcvXrx48eLFixcvXrx48eLFixcvXrx48eLFixcvXrx48eLFixcvXrx48eLFixcvXrx48SLYg2APfgd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAd7sAfPgCwFRERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERH">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/platforms.css">
+</head>
+<body>
+  <!-- 헤더 - 2049x70 -->
+  <header class="header">
+    <div class="header-left">
+      <div class="kakao-logo">
+        <i class="fas fa-comment"></i>
+      </div>
+      <span class="header-title">카카오톡 안내</span>
+    </div>
+    <button class="header-menu">
+      <i class="fas fa-ellipsis-v"></i>
+    </button>
+  </header>
+
+  <!-- 메인 컨테이너 - 600x1667, 중앙정렬, 양사이드 패딩 13px, 위 패딩 16px -->
+  <div class="main-container">
+    <!-- 비디오 컨테이너 - 574x574 -->
+    <div class="video-container">
+      <video class="video-player" autoplay muted loop playsinline>
+        <source src="mp4/sara01.mp4" type="video/mp4">
+      </video>
+      <div class="video-placeholder" style="display: none;">
+        <i class="fas fa-redo-alt"></i>
+        <span>다시보기</span>
+      </div>
+      <button class="play-button">
+        <i class="fas fa-play"></i>
+      </button>
+    </div>
+
+    <!-- 채널 카드 -->
+    <div class="channel-card">
+      <div class="channel-header">
+        <div class="channel-profile">
+          <i class="fas fa-heart"></i>
+        </div>
+        <div class="channel-info">
+          <h2>
+            사라 카카오톡
+            <div class="verified-badge">
+              <i class="fas fa-check"></i>
+            </div>
+          </h2>
+          <div class="follower-count">친구 577명</div>
+        </div>
+      </div>
+      
+      <p class="channel-description">
+        누구나 따라할 수 없는 사라만의 VIP 케어! 오빠들 부끄러워하지마...나도부끄러워☺️
+      </p>
+      
+      <div class="channel-buttons">
+        <button class="btn">
+          <i class="fas fa-bell"></i>
+          팔로잉
+        </button>
+        <button class="btn">
+          <i class="fas fa-comment"></i>
+          친구하기
+        </button>
+      </div>
+      
+      <a href="https://open.kakao.com/o/sZoUeSxh" target="_blank" class="yellow-button">
+        <i class="fas fa-comment"></i>
+        메세지 보내고 비밀 콘텐츠 받기
+      </a>
+    </div>
+  </div>
+
+  <!-- 하단 푸터 -->
+  <footer class="footer">
+    <p class="footer-text">이 정보는 카카오톡에서 제공됩니다</p>
+    <div class="footer-logo">
+      <i class="fas fa-comment"></i>
+    </div>
+  </footer>
+
+</body>
+</html>

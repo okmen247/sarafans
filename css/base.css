@@ -1,0 +1,300 @@
+/* =========================================
+   BASE.CSS
+   - 전역 스타일 및 리셋
+   - 기본 타이포그래피
+   - 컨테이너 및 기본 레이아웃
+   - 유틸리티 클래스
+   - 공통 애니메이션
+   ========================================= */
+
+/* --------------------------------------
+   1. CSS 변수 (루트 설정)
+   -------------------------------------- */
+   :root {
+    /* 색상 변수 */
+    --color-primary: #ff3366;
+    --color-primary-dark: #ff0066;
+    --color-secondary: #a78bfa;
+    --color-background: #000000;
+    --color-surface: #12141B;
+    --color-surface-lighter: #1A1C25;
+    --color-text: #fff;
+    --color-text-secondary: rgba(255, 255, 255, 0.7);
+    --color-text-tertiary: rgba(255, 255, 255, 0.5);
+    --color-border: rgba(255, 255, 255, 0.08);
+    --color-overlay: rgba(0, 0, 0, 0.3);
+    
+    /* 타이포그래피 */
+    --font-body: 'Noto Sans KR', sans-serif;
+    --font-size-xs: 11px;
+    --font-size-sm: 13px;
+    --font-size-base: 14px;
+    --font-size-md: 16px;
+    --font-size-lg: 18px;
+    --font-size-xl: 24px;
+    --font-size-xxl: 28px;
+    --font-size-xxxl: 36px;
+    
+    /* 레이아웃 */
+    --container-max-width: 1368px;
+    --container-padding: 44px;
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+    --border-radius-full: 50px;
+    
+    /* 애니메이션 */
+    --transition-fast: 0.2s;
+    --transition-medium: 0.3s;
+    --transition-slow: 0.5s;
+    
+    /* 그림자 */
+    --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.3);
+    
+    /* z-index 레이어 */
+    --z-index-base: 1;
+    --z-index-overlay: 50;
+    --z-index-dropdown: 100;
+    --z-index-fixed: 500;
+    --z-index-modal: 1000;
+  }
+  
+  /* --------------------------------------
+     2. 전역 스타일 및 리셋
+     -------------------------------------- */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background-color: var(--color-background);
+    overflow-x: hidden;
+    line-height: 1.5;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    font-family: inherit;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  ul, ol {
+    list-style: none;
+  }
+  
+  /* --------------------------------------
+     3. 컨테이너 및 기본 레이아웃
+     -------------------------------------- */
+  .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+  }
+  
+  .content-wrapper {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+    width: 100%;
+  }
+  
+  .section-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0) 100%);
+    margin: 20px 0 0;
+  }
+  
+  /* --------------------------------------
+     4. 유틸리티 클래스
+     -------------------------------------- */
+  .hide {
+    display: none !important;
+  }
+  
+  .show {
+    display: block !important;
+  }
+  
+  .hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility var(--transition-medium), opacity var(--transition-medium);
+  }
+  
+  .visible {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .text-right {
+    text-align: right;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .flex-column {
+    flex-direction: column;
+  }
+  
+  .justify-center {
+    justify-content: center;
+  }
+  
+  .justify-between {
+    justify-content: space-between;
+  }
+  
+  .align-center {
+    align-items: center;
+  }
+  
+  .flex-grow {
+    flex-grow: 1;
+  }
+  
+  .gap-sm {
+    gap: 8px;
+  }
+  
+  .gap-md {
+    gap: 16px;
+  }
+  
+  .gap-lg {
+    gap: 24px;
+  }
+  
+  /* --------------------------------------
+     5. 공통 애니메이션
+     -------------------------------------- */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes blink {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+  
+  @keyframes heartbeat {
+    0% { transform: scale(1) rotate(45deg); }
+    25% { transform: scale(1.1) rotate(45deg); }
+    50% { transform: scale(1) rotate(45deg); }
+    75% { transform: scale(1.1) rotate(45deg); }
+    100% { transform: scale(1) rotate(45deg); }
+  }
+  
+  @keyframes gradientBanner {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  @keyframes slideIn {
+    from { max-height: 0; opacity: 0; margin-top: -40px; }
+    to { max-height: 40px; opacity: 1; margin-top: 0; }
+  }
+  
+  @keyframes slideOut {
+    from { max-height: 40px; opacity: 1; margin-top: 0; }
+    to { max-height: 0; opacity: 0; margin-top: -40px; }
+  }
+  
+  /* 애니메이션 적용 클래스 */
+  .animate-fade-in-up {
+    animation: fadeInUp var(--transition-slow) ease-out;
+    animation-fill-mode: backwards;
+  }
+  
+  /* 애니메이션 지연 시간 클래스 */
+  .delay-1 {
+    animation-delay: 0.1s;
+  }
+  
+  .delay-2 {
+    animation-delay: 0.2s;
+  }
+  
+  .delay-3 {
+    animation-delay: 0.3s;
+  }
+  
+  .delay-4 {
+    animation-delay: 0.4s;
+  }
+  
+  .delay-5 {
+    animation-delay: 0.5s;
+  }
+  
+  /* 그라데이션 배경 클래스 */
+  .gradient-primary {
+    background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
+  }
+  
+  .gradient-purple {
+    background: linear-gradient(90deg, #a78bfa, #c084fc);
+  }
+  
+  /* 배경 패턴 클래스 */
+  .bg-pattern {
+    background-image: linear-gradient(to bottom, rgba(18, 20, 27, 1) 0%, rgba(18, 20, 27, 0.95) 100%),
+                      url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><path d="M0,0 L100,100 M0,100 L100,0" stroke="rgba(255, 51, 102, 0.05)" stroke-width="1"/></svg>');
+    background-size: cover, 20px 20px;
+  }
+  
+  .bg-pattern-light {
+    background-image: linear-gradient(to bottom, rgba(18, 20, 27, 1) 0%, rgba(18, 20, 27, 0.95) 100%),
+                      url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><path d="M0,0 L100,100 M0,100 L100,0" stroke="rgba(255, 51, 102, 0.03)" stroke-width="1"/></svg>');
+    background-size: cover, 20px 20px;
+  }
+  
+  /* 텍스트 그라데이션 클래스 */
+  .text-gradient {
+    background: linear-gradient(90deg, #a78bfa, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .text-gradient-primary {
+    background: linear-gradient(90deg, #fb87a4, #ec3880);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }

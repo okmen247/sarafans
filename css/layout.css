@@ -1,0 +1,676 @@
+/* =========================================
+   LAYOUT.CSS
+   - 헤더와 푸터
+   - 메인 내비게이션
+   - 사이드 배너
+   - 모바일 내비게이션
+   - 팝업 및 모달
+   ========================================= */
+
+/* --------------------------------------
+   1. 헤더 영역
+   -------------------------------------- */
+   .header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: var(--color-background);
+    z-index: var(--z-index-fixed);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    height: 64px;
+  }
+  
+  .header-inner {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+  }
+  
+  .top-inner-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+  }
+  
+  /* 로고 영역 */
+  .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  /* 유틸리티 네비게이션 */
+  .utility-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* --------------------------------------
+     2. 메인 내비게이션
+     -------------------------------------- */
+  .main-nav {
+    width: 100%;
+    background-color: var(--color-background);
+    border-bottom: 1px solid var(--color-border);
+    height: 66px;
+  }
+  
+  .nav-wrapper {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+  }
+  
+  .nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 66px;
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .nav-link {
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    position: relative;
+    padding: 5px 0;
+    transition: color var(--transition-fast) ease;
+  }
+  
+  .nav-link:hover {
+    color: var(--color-text);
+  }
+  
+  .nav-link.active {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+  
+  .nav-link.active::after,
+  .nav-link.home-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
+    border-radius: 3px 3px 0 0;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 9999;
+  }
+  
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .guarantee-link {
+    position: relative;
+  }
+  
+  .heart-badge {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #feceff;
+    position: relative;
+    top: -10px;
+    right: -5px;
+    animation: heartbeat 1.5s infinite;
+    transform: rotate(45deg);
+  }
+  
+  .heart-badge::before,
+  .heart-badge::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: #feceff;
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  .heart-badge::before {
+    top: -4px;
+    left: 0;
+  }
+  
+  .heart-badge::after {
+    top: 0;
+    left: -4px;
+  }
+  
+  /* --------------------------------------
+     3. 모바일 공지 배너
+     -------------------------------------- */
+  .mobile-notice-banner {
+    display: none; /* 기본적으로 숨김, 모바일에서만 표시 */
+    width: 100%;
+    color: var(--color-text);
+    padding: 0 12px;
+    height: 45px;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+    z-index: 999;
+    margin-bottom: 5px;
+    background: linear-gradient(90deg, #ff3366, #a64dff, #ff66b2, #ff3366);
+    background-size: 300% 100%;
+    animation: gradientBanner 6s linear infinite;
+    max-height: 40px;
+    transition: max-height 0.5s ease, opacity 0.5s ease, margin-top 0.5s ease, z-index 0.5s;
+    overflow: hidden;
+  }
+  
+  .mobile-notice-banner.closed {
+    animation: slideOut var(--transition-medium) ease-out forwards;
+    max-height: 0;
+    opacity: 0;
+    margin-top: -40px;
+    z-index: -1;
+  }
+  
+  .notice-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  
+  .notice-text {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    font-size: 13px;
+    padding-right: 8px;
+  }
+  
+  .notice-close {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .notice-close:hover {
+    color: var(--color-text);
+  }
+  
+  /* --------------------------------------
+     4. 사이드 배너
+     -------------------------------------- */
+  .side-banners-container {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+    z-index: var(--z-index-fixed);
+    pointer-events: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  
+  .side-banner {
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    pointer-events: auto;
+    transition: transform var(--transition-medium) cubic-bezier(0.34, 1.56, 0.64, 1);
+    border: none;
+    line-height: normal;
+  }
+  
+  .side-banner + .side-banner {
+    margin-top: 5px !important; /* 간격을 더 좁게 조정 (10px에서 5px로) */
+  }
+  
+  .side-banner-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: 0;
+    padding: 12px 10px 12px 15px;
+    width: 200px;
+    height: 70px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    margin: 0;
+    border: none;
+  }
+  
+  /* 카카오톡 배너 스타일 */
+  .kakao-banner {
+    background: #FEE500;
+    border-radius: 12px 0 0 0;
+  }
+  
+  /* 텔레그램 배너 스타일 */
+  .telegram-banner {
+    background: #26A5E4;
+    border-radius: 0 0 0 12px;
+  }
+  
+  /* 호버 효과 */
+  .side-banners-container:hover .side-banner {
+    transform: translateX(-8px);
+  }
+  
+  /* 배너 아이콘 */
+  .banner-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: transform var(--transition-medium) cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin: 0;
+    border: none;
+  }
+  
+  .side-banners-container:hover .banner-icon {
+    transform: scale(1.1);
+  }
+  
+  /* 아이콘 색상 */
+  .kakao-banner .banner-icon {
+    color: #000;
+    background-color: rgba(0, 0, 0, 0.08);
+  }
+  
+  .telegram-banner .banner-icon {
+    color: var(--color-text);
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* 배너 텍스트 스타일 */
+  .banner-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    z-index: 5;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+  }
+  
+  .banner-text span {
+    display: block;
+    transition: transform var(--transition-medium) cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin: 0;
+    padding: 0;
+  }
+  
+  .side-banners-container:hover .banner-text span {
+    transform: translateX(5px);
+  }
+  
+  .banner-text span:first-child {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+  }
+  
+  .banner-text span:last-child {
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .telegram-banner .banner-text span:first-child,
+  .telegram-banner .banner-text span:last-child {
+    color: var(--color-text);
+  }
+  
+  .telegram-banner .banner-text span:last-child {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  /* 닫기 버튼 */
+  .mobile-banner-close {
+    display: none; /* 모바일에서만 표시 */
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.15);
+    color: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    z-index: 20;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  
+  .telegram-banner .mobile-banner-close {
+    background-color: rgba(0, 0, 0, 0.15);
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  /* --------------------------------------
+     5. 메인 컨텐츠 영역
+     -------------------------------------- */
+  .main-content {
+    flex: 1;
+  }
+  
+  /* --------------------------------------
+     6. 푸터
+     -------------------------------------- */
+  .site-footer {
+    background-color: var(--color-background);
+    border-top: 1px solid var(--color-border);
+    padding: 30px 0;
+  }
+  
+  .footer-container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footer-text {
+    font-size: var(--font-size-base);
+    color: var(--color-text-tertiary);
+    text-align: center;
+  }
+  
+  /* --------------------------------------
+     7. 팝업 배너
+     -------------------------------------- */
+  .popup-banner {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: var(--z-index-modal);
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity var(--transition-medium), transform var(--transition-medium);
+  }
+  
+  .popup-banner.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .popup-banner-inner {
+    position: relative;
+    width: 250px;
+    height: 400px;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    cursor: pointer;
+  }
+  
+  .popup-banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .popup-banner-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+    z-index: 10;
+  }
+  
+  .popup-banner-close:hover {
+    background-color: rgba(255, 51, 102, 0.8);
+  }
+  
+  /* --------------------------------------
+     8. 모바일 하단 네비게이션
+     -------------------------------------- */
+  .mobile-bottom-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: var(--color-background);
+    border-top: 1px solid var(--color-border);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+    z-index: var(--z-index-fixed);
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .mobile-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    height: 100%;
+    padding: 5px 0;
+    color: var(--color-text-secondary);
+    font-size: 10px;
+    transition: color var(--transition-fast);
+  }
+  
+  .mobile-nav-item.active {
+    color: var(--color-text);
+  }
+  
+  .mobile-nav-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-bottom: 3px;
+    position: relative;
+  }
+  
+  .add-button {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(45deg, var(--color-primary), var(--color-primary-dark));
+    border-radius: 50%;
+    margin-bottom: 0;
+    margin-top: -15px;
+    box-shadow: 0 5px 15px rgba(255, 51, 102, 0.3);
+    transition: transform var(--transition-fast);
+  }
+  
+  .mobile-nav-item:hover .add-button {
+    transform: translateY(-2px);
+  }
+  
+  .mobile-nav-text {
+    font-size: 12px;
+    font-weight: 500;
+  }
+  
+  /* --------------------------------------
+     9. 후원 랭킹 팝업
+     -------------------------------------- */
+  .sponsor-ranking-popup {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: auto;
+    max-height: 60vh;
+    background-color: var(--color-surface-lighter);
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.4);
+    z-index: var(--z-index-modal);
+    overflow: hidden;
+    transition: bottom 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sponsor-ranking-popup.show {
+    bottom: 80px !important;
+    display: block !important;
+  }
+  
+  .sponsor-popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--color-border);
+  }
+  
+  .sponsor-popup-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0;
+  }
+  
+  .sponsor-popup-close {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+  
+  .sponsor-popup-close:hover {
+    background-color: rgba(255, 51, 102, 0.2);
+    color: var(--color-text);
+  }
+  
+  .sponsor-popup-content {
+    padding: 5px 15px 15px;
+    overflow-y: auto;
+    flex: 1;
+    max-height: calc(60vh - 50px);
+  }
+  
+  /* --------------------------------------
+     10. 스크롤 업 버튼
+     -------------------------------------- */
+  .scroll-to-top-btn {
+    position: fixed;
+    bottom: 100px;
+    left: 15px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(255, 51, 102, 0.95), rgba(255, 0, 102, 0.95));
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-medium), visibility var(--transition-medium), transform var(--transition-medium);
+    transform: translateY(20px);
+    z-index: 996;
+    box-shadow: var(--shadow-md);
+    border: none;
+  }
+  
+  .scroll-to-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  .scroll-to-top-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* layout.css에 추가 */
+.content-container {
+    max-width: var(--container-max-width);
+    width: 100%;
+    margin: 0 auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+    padding: 20px 0;
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  /* 기존 컨테이너 오버라이드를 위한 클래스 */
+  .content-reset {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !important;
+  }

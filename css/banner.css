@@ -1,0 +1,264 @@
+/* Updated Banner Ads Section */
+.banner-ads-section {
+    max-width: 1368px;
+    margin: 0 auto;
+    padding: 15px 44px 15px;
+}
+
+.banner-ads-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+/* Card 1 - 바카라슬롯추천왕 */
+.banner-ad:nth-child(1) .banner-ad-inner {
+    background: linear-gradient(135deg, #3B1C80 0%, #7949FF 100%);
+    border: none;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    height: 130px;
+    padding: 24px;
+    z-index: 1;
+    border-radius: 12px;
+}
+
+.banner-ad:nth-child(1) .banner-ad-inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(255, 51, 190, 0.3), transparent 70%);
+    z-index: -1;
+}
+
+.banner-ad:nth-child(1) .banner-ad-inner::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    right: -60px;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle, rgba(255, 51, 204, 0.5) 0%, rgba(185, 85, 255, 0.2) 70%);
+    border-radius: 50%;
+    z-index: -1;
+    transform: translate(0, 0);
+    animation: float-circle 5s ease-in-out infinite;
+}
+
+.banner-ad:nth-child(1) .ad-title {
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    position: relative;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.banner-ad:nth-child(1) .ad-subtitle {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    position: relative;
+}
+
+.banner-ad:nth-child(1) .ad-image {
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+    border-radius: 50%;
+    position: relative;
+    border: 3px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), 
+                0 0 0 5px rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.banner-ad:nth-child(1) .ad-image::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    z-index: -1;
+    animation: rotate-slow 8s linear infinite;
+}
+
+/* Card 2 - 게임리그 / e스포츠 콘텐츠 제작 */
+.banner-ad:nth-child(2) .banner-ad-inner {
+    background: linear-gradient(135deg, #003975 0%, #0097FF 100%);
+    border: none;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    height: 130px;
+    padding: 24px;
+    z-index: 1;
+    border-radius: 12px;
+}
+
+.banner-ad:nth-child(2) .banner-ad-inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top left, rgba(0, 195, 255, 0.3), transparent 70%);
+    z-index: -1;
+}
+
+.banner-ad:nth-child(2) .banner-ad-inner::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    left: -60px;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle, rgba(0, 225, 255, 0.5) 0%, rgba(43, 116, 255, 0.2) 70%);
+    border-radius: 50%;
+    z-index: -1;
+    transform: translate(0, 0);
+    animation: float-circle-reverse 5s ease-in-out infinite;
+}
+
+.banner-ad:nth-child(2) .ad-title {
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    position: relative;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.banner-ad:nth-child(2) .ad-subtitle {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    position: relative;
+}
+
+.banner-ad:nth-child(2) .ad-image {
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+    border-radius: 50%;
+    position: relative;
+    border: 3px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), 
+                0 0 0 5px rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.banner-ad:nth-child(2) .ad-image::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    z-index: -1;
+    animation: rotate-slow-reverse 8s linear infinite;
+}
+
+/* Common hover effect for both cards */
+.banner-ad:hover .banner-ad-inner {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+.banner-ad:hover .ad-image img {
+    transform: scale(1.08);
+    transition: transform 0.3s ease;
+}
+
+/* Animations */
+@keyframes float-circle {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-10px, -10px); }
+}
+
+@keyframes float-circle-reverse {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(10px, -10px); }
+}
+
+@keyframes rotate-slow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes rotate-slow-reverse {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+    .banner-ads-wrapper {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .banner-ad:nth-child(1) .ad-title,
+    .banner-ad:nth-child(2) .ad-title {
+        font-size: 20px;
+    }
+    
+    .banner-ad:nth-child(1) .ad-subtitle,
+    .banner-ad:nth-child(2) .ad-subtitle {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner-ads-section {
+        padding: 15px 10px 25px; /* 양쪽 패딩 15px로 수정 */
+    }
+    
+    .banner-ad-inner {
+        height: 110px !important;
+        padding: 15px !important;
+    }
+    
+    .banner-ad:nth-child(1) .ad-title,
+    .banner-ad:nth-child(2) .ad-title {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    
+    .banner-ad:nth-child(1) .ad-subtitle,
+    .banner-ad:nth-child(2) .ad-subtitle {
+        font-size: 13px;
+    }
+    
+    .banner-ad:nth-child(1) .ad-image,
+    .banner-ad:nth-child(2) .ad-image {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-ad:nth-child(1) .ad-title,
+    .banner-ad:nth-child(2) .ad-title {
+        font-size: 16px;
+    }
+    
+    .banner-ad:nth-child(1) .ad-subtitle,
+    .banner-ad:nth-child(2) .ad-subtitle {
+        font-size: 12px;
+    }
+    
+    .banner-ad:nth-child(1) .ad-image,
+    .banner-ad:nth-child(2) .ad-image {
+        width: 60px;
+        height: 60px;
+    }
+}

@@ -1,0 +1,1063 @@
+/* =========================================
+   RESPONSIVE.CSS
+   - 미디어 쿼리 모음
+   - 다양한 화면 크기에 대한 스타일 조정
+   - 모바일 및 태블릿 최적화
+   ========================================= */
+
+/* --------------------------------------
+   1. 기본 모바일/배너 최적화
+   -------------------------------------- */
+/* 모바일 화면에서 배너 배경 이미지 중앙에서 약간 좌측으로 정렬 */
+@media (max-width: 768px) {
+    .banner-background img {
+      object-fit: cover;
+      object-position: 40% center; /* 중앙(50%)에서 약간 좌측(40%)으로 정렬 */
+    }
+  }
+  
+  /* 전체화면 버튼 모바일에서 숨기기 */
+  @media (max-width: 768px) {
+    .fullscreen-btn, #fullscreenButton {
+      display: none !important;
+    }
+  }
+  
+  /* --------------------------------------
+     2. 1200px 이하 화면 (대형 태블릿/작은 데스크톱)
+     -------------------------------------- */
+  @media (max-width: 1200px) {
+    /* 여백 조정 */
+    .header-inner, 
+    .nav-wrapper, 
+    .banner-content, 
+    .manager-wrapper, 
+    .conference-wrapper, 
+    .banner-ads-section, 
+    .vip-section, 
+    .review-section-wrapper, 
+    .footer-container {
+      padding: 0 30px;
+    }
+    
+    /* 그리드 열 수 조정 */
+    .conference-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* 배너 간격 조정 */
+    .banner-ads-wrapper {
+      gap: 15px;
+    }
+  }
+  
+  /* --------------------------------------
+     3. 992px 이하 화면 (태블릿)
+     -------------------------------------- */
+  @media (max-width: 992px) {
+    /* 여백 추가 축소 */
+    .header-inner, 
+    .nav-wrapper, 
+    .banner-content, 
+    .manager-wrapper, 
+    .conference-wrapper, 
+    .banner-ads-section, 
+    .vip-section, 
+    .review-section-wrapper, 
+    .footer-container {
+      padding: 0 20px;
+    }
+    
+    /* 폰트 크기 조정 */
+    .slide-title {
+      font-size: 32px;
+    }
+    
+    /* 그리드 2열로 조정 */
+    .conference-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    
+    /* 배너 1열로 변경 */
+    .banner-ads-wrapper {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    
+    /* 사이드 배너 숨김 */
+    .side-banners-container {
+      display: none;
+    }
+  }
+  
+  /* --------------------------------------
+     4. 768px 이하 화면 (모바일)
+     -------------------------------------- */
+  @media (max-width: 768px) {
+    /* 이벤트 페이지 스타일 */
+    .event-header-section {
+      margin-top: 92px;
+      padding: 20px 0 10px;
+      transition: margin-top 0.5s ease;
+    }
+    
+    .event-main-title {
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+    
+    .event-subtitle {
+      font-size: 14px;
+    }
+    
+    .event-filter {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    
+    .filter-tabs {
+      width: 100%;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding-bottom: 5px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    
+    .filter-tabs::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .filter-sort {
+      width: 100%;
+    }
+    
+    .sort-select {
+      width: 100%;
+    }
+    
+    .event-cards {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+    
+    .event-card-image {
+      height: 160px;
+    }
+    
+    .event-card-content {
+      padding: 15px;
+    }
+    
+    .event-title {
+      font-size: 16px;
+    }
+    
+    .event-desc {
+      font-size: 13px;
+    }
+    
+    .recommended-event-banner {
+      flex-direction: column;
+    }
+    
+    .recommended-event-image {
+      width: 100%;
+      height: 180px;
+    }
+    
+    .recommended-event-content {
+      width: 100%;
+      padding: 15px;
+    }
+    
+    .recommended-event-title {
+      font-size: 18px;
+    }
+    
+    .recommended-event-desc {
+      font-size: 14px;
+    }
+    
+    .contact-banner {
+      flex-direction: column;
+      padding: 20px;
+    }
+    
+    .contact-banner-content {
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+    
+    .contact-banner-title {
+      font-size: 18px;
+    }
+    
+    .contact-banner-desc {
+      font-size: 14px;
+    }
+    
+    .contact-banner-actions {
+      width: 100%;
+      justify-content: space-between;
+    }
+    
+    .contact-btn {
+      width: 48%;
+      justify-content: center;
+    }
+    
+    /* 여백 추가 축소 */
+    .header-inner, 
+    .nav-wrapper, 
+    .banner-content, 
+    .manager-wrapper, 
+    .conference-wrapper, 
+    .banner-ads-section, 
+    .vip-section, 
+    .review-section-wrapper, 
+    .footer-container {
+      padding: 0 15px;
+    }
+    
+    /* 헤더 고정 및 크기 조정 */
+    .header {
+      height: 48px !important;
+      position: fixed;
+      width: 100%;
+      z-index: 999;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    .top-inner-header {
+      height: 48px !important;
+    }
+    
+    /* 로고 크기 조정 */
+    .scoop-logo, .s-text, .p-text {
+      font-size: 22px;
+    }
+    
+    .infinity-icon {
+      font-size: 20px;
+    }
+    
+    /* 아이콘 버튼 크기 조정 */
+    .icon-btn {
+      width: 32px;
+      height: 32px;
+      font-size: 14px;
+    }
+    
+    /* 메인 네비게이션 조정 */
+    .main-nav {
+      height: 44px !important;
+      position: fixed;
+      top: 48px;
+      left: 0;
+      width: 100%;
+      z-index: 998;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+    }
+    
+    .nav-inner {
+      height: 44px !important;
+    }
+    
+    .nav-wrapper {
+      padding: 0 10px !important;
+    }
+    
+    .nav-links {
+      gap: 15px;
+      justify-content: flex-start;
+      overflow-x: auto;
+      width: 100%;
+      padding: 0 5px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    
+    .nav-links::-webkit-scrollbar { 
+      display: none;
+    }
+    
+    .nav-link {
+      font-size: 13px;
+      white-space: nowrap;
+      padding: 4px 0;
+    }
+    
+    .nav-link.active::after,
+    .nav-link.home-link.active::after {
+      bottom: -10px;
+      height: 2px;
+    }
+    
+    /* 모바일 하단 네비게이션 표시 */
+    .mobile-bottom-nav {
+      display: flex;
+    }
+    
+    /* 모바일 공지 배너 표시 */
+    .mobile-notice-banner {
+      display: flex;
+      position: fixed;
+      top: 92px; /* 헤더(48px) + 메뉴(44px) = 92px */
+      left: 0;
+      width: 100%;
+      height: 40px !important;
+      z-index: 997;
+      margin-bottom: 0;
+      padding: 0 10px;
+    }
+    
+    /* 배너 섹션 조정 */
+    .banner-section {
+      height: 220px !important; /* 250px에서 220px로 변경 */
+      margin-top: 132px; /* 헤더(48px) + 메뉴(44px) + 공지(40px) = 132px */
+      padding-top: 0;
+      transition: margin-top 0.5s ease;
+    }
+    
+    /* 슬라이드 내용 조정 */
+    .slide-content {
+      padding-top: 25px; /* 30px에서 25px로 변경 */
+    }
+    
+    .slide-title {
+      font-size: 22px; /* 26px에서 22px로 변경 */
+      margin-bottom: 12px; /* 추가 */
+    }
+    
+    .slide-subtitle {
+      font-size: 14px; /* 15px에서 14px로 변경 */
+      margin-bottom: 12px; /* 15px에서 12px로 변경 */
+    }
+    
+    /* 섹션 패딩 조정 */
+    .manager-section, .conference-section {
+      padding: 10px 0 10px;
+    }
+    
+    .manager-header {
+      margin-bottom: 15px;
+      margin-top:10px;
+    }
+    
+    .section-title {
+      font-size: 20px;
+    }
+    
+    .subtitle {
+      font-size: 14px;
+    }
+    
+    .section-divider {
+      margin: 10px 0 0;
+    }
+    
+    /* 그리드 조정 */
+    .conference-grid {
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 10px !important;
+    }
+    
+    /* 카드 조정 */
+    .card-image {
+      height: 140px;
+    }
+    
+    .card-info {
+      padding: 10px;
+    }
+    
+    .card-title {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    
+    .card-period {
+      font-size: 11px;
+      margin-bottom: 3px;
+    }
+    
+    .card-footer {
+      margin-bottom: 8px;
+    }
+    
+    .card-tags {
+      gap: 4px;
+    }
+    
+    .tag {
+      font-size: 10px;
+      padding: 3px 8px;
+    }
+    
+    .author-name {
+      font-size: 12px;
+    }
+    
+    .author-image {
+      width: 20px;
+      height: 20px;
+    }
+    
+    /* 카테고리 탭 스크롤 처리 */
+    .category-tabs {
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 8px 0;
+      gap: 6px;
+      justify-content: flex-start;
+      -webkit-overflow-scrolling: touch;
+      margin-bottom: 15px;
+    }
+    
+    .category-tab {
+      flex-shrink: 0;
+      font-size: 13px;
+      padding: 5px 10px;
+      border-radius: 20px;
+    }
+    
+    .category-tabs::-webkit-scrollbar {
+      display: none;
+    }
+    
+    /* VIP 섹션 모바일 스타일 */
+    .vip-section {
+      padding: 15px;
+    }
+    
+    .vip-banner {
+      padding: 20px;
+      flex-direction: column;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    
+    .vip-title-section {
+      max-width: 100%;
+    }
+    
+    .vip-title {
+      font-size: 22px;
+    }
+    
+    .vip-highlight {
+      font-size: 16px;
+    }
+    
+    .vip-description {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+    
+    .vip-benefits {
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    /* 사이드 배너 모바일 스타일 */
+    .side-banners-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0 !important;
+      right: 15px !important;
+      bottom: 80px !important;
+      top: auto !important;
+      transform: none !important;
+      z-index: 997 !important;
+    }
+    
+    .side-banner + .side-banner {
+      margin-top: 10px !important;
+    }
+    
+    .side-banner-link {
+      width: 50px !important;
+      height: 50px !important;
+      border-radius: 50% !important;
+      padding: 0 !important;
+      justify-content: center !important;
+      gap: 0 !important;
+    }
+    
+    .kakao-banner, .telegram-banner {
+      border-radius: 50% !important;
+    }
+    
+    .banner-text {
+      display: none !important;
+    }
+    
+    .banner-icon {
+      width: 30px !important;
+      height: 30px !important;
+      margin: 0 !important;
+      font-size: 16px !important;
+    }
+    
+    .side-banners-container:hover .side-banner {
+      transform: translateX(0) !important;
+    }
+    
+    .side-banners-container:hover .banner-icon {
+      transform: scale(1.1) !important;
+    }
+    
+    .mobile-banner-close {
+      display: flex;
+      top: -5px !important;
+      right: -5px !important;
+      width: 16px !important;
+      height: 16px !important;
+      font-size: 8px !important;
+    }
+    
+    /* 후기 섹션 조정 */
+    .review-section, .review-section-wrapper {
+      display: none;
+    }
+    
+    .review-tab {
+      display: none; /* 모바일에서는 탭 숨김, 대신 모바일용 제목 사용 */
+    }
+    
+    .review-item.board-item {
+      position: relative;
+      padding: 12px 15px;
+      margin: 0 10px 8px;
+      background-color: rgba(255, 255, 255, 0.03);
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .board-num {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      width: 24px;
+      height: 24px;
+      background-color: rgba(255, 51, 102, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .review-content.board-title {
+      width: 100%;
+      padding-left: 32px;
+      margin-bottom: 5px;
+    }
+    
+    .review-content.board-title p {
+      font-size: 14px;
+      line-height: 1.4;
+      white-space: normal;
+      overflow: visible;
+    }
+    
+    .review-author-info.board-author {
+      width: auto;
+      text-align: left;
+      margin-left: 32px;
+    }
+    
+    .review-author-name {
+      font-size: 12px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .review-date {
+      font-size: 11px;
+    }
+    
+    .board-views {
+      display: none; /* 모바일에서는 조회수 숨김 */
+    }
+    
+    /* 팝업 배너 조정 */
+    .popup-banner {
+      bottom: 70px;
+      right: 15px;
+    }
+    
+    .popup-banner-inner {
+      width: 200px;
+      height: 200px;
+    }
+    
+    /* 버튼 숨김 */
+    .sponsor-btn, .nav-actions {
+      display: none;
+    }
+    
+    /* 매니저 섹션 모바일 스타일 */
+    .manager-title-container {
+      display: flex;
+      align-items: center;
+      line-height: 1; /* 라인 높이 추가 */
+    }
+    
+    .section-title {
+      font-size: 17px !important;
+      line-height: 1; /* 라인 높이 추가 */
+      margin: 0; /* 마진 제거 */
+    }
+    
+    .manager-subtitle {
+      font-size: 13px !important;
+      margin-left: 10px !important;
+      line-height: 1; /* 라인 높이 추가 */
+      vertical-align: middle; /* 수직 정렬 추가 */
+    }
+    
+    .manager-profile {
+      width: 100px;
+    }
+    
+    .profile-image {
+      width: 100px;
+      height: 130px;
+      margin-bottom: 5px;
+      border-radius: 8px;
+    }
+    
+    .profile-name {
+      font-size: 12px;
+    }
+    
+    .manager-profiles {
+      gap: 8px;
+      padding-bottom: 5px;
+    }
+    
+    .manager-scroll-btn {
+      width: 28px;
+      height: 28px;
+      font-size: 12px;
+    }
+    
+    /* 푸터 조정 */
+    .site-footer {
+      padding: 20px 0 80px; /* 패딩 추가 최적화 */
+    }
+      
+    .footer-container {
+      padding: 0 20px;
+    }
+      
+    .footer-text {
+      font-size: 12px;
+    }
+    
+    /* 스크롤 버튼 조정 */
+    .scroll-to-top-btn {
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+      background: rgba(255, 51, 102, 0.8);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+  }
+  
+  /* --------------------------------------
+     5. 576px 이하 화면 (작은 모바일)
+     -------------------------------------- */
+  @media (max-width: 576px) {
+    /* 이벤트 페이지 작은 모바일 스타일 */
+    .event-main-title {
+      font-size: 24px;
+    }
+    
+    .event-subtitle {
+      font-size: 13px;
+    }
+    
+    .event-notice-container {
+      padding: 15px;
+    }
+    
+    .event-notice-title {
+      font-size: 15px;
+    }
+    
+    .event-notice-list li {
+      font-size: 12px;
+    }
+    
+    .pagination-prev,
+    .pagination-next,
+    .pagination-number {
+      width: 32px;
+      height: 32px;
+      font-size: 12px;
+    }
+    
+    .header-inner {
+      padding: 0 10px;
+    }
+    
+    .logo-area {
+      gap: 10px;
+    }
+    
+    .scoop-logo, .s-text, .p-text, .infinity-icon {
+      font-size: 24px;
+    }
+    
+    .utility-nav {
+      gap: 5px;
+    }
+    
+    .icon-btn {
+      width: 32px;
+      height: 32px;
+    }
+    
+    .banner-section {
+      height: 220px !important;
+    }
+    
+    .slide-content {
+      padding-top: 25px;
+    }
+    
+    .slide-category {
+      font-size: 13px;
+      padding: 3px 10px;
+      margin-bottom: 10px;
+    }
+    
+    .slide-title {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+    
+    .slide-subtitle {
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+    
+    .slide-pagination {
+      bottom: 15px;
+      left: 15px;
+      gap: 15px;
+      font-size: 12px;
+    }
+    
+    /* 매니저 섹션을 더 작게 조정 */
+    .manager-profile {
+      width: 90px;
+    }
+    
+    .profile-image {
+      width: 90px;
+      height: 120px;
+      margin-bottom: 4px;
+      border-radius: 6px;
+    }
+    
+    .profile-name {
+      font-size: 11px;
+    }
+    
+    .manager-profiles {
+      gap: 6px;
+      padding-bottom: 5px;
+    }
+    
+    .manager-scroll-btn {
+      width: 24px;
+      height: 24px;
+      font-size: 12px;
+    }
+    
+    .vip-status {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    
+    .status-label, .status-highlight, .status-desc {
+      font-size: 16px;
+    }
+    
+    .review-item {
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .review-author {
+      flex-direction: row;
+      gap: 15px;
+    }
+  }
+  
+  /* --------------------------------------
+     6. 480px 이하 화면 (매우 작은 모바일)
+     -------------------------------------- */
+  @media (max-width: 480px) {
+    .conference-grid {
+      gap: 8px !important;
+    }
+    
+    .card-image {
+      height: 120px;
+    }
+    
+    .card-info {
+      padding: 8px;
+    }
+    
+    .card-title {
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+    
+    .card-badge {
+      font-size: 10px;
+      padding: 2px 6px;
+      top: 6px;
+      right: 6px;
+    }
+    
+    /* VIP 섹션 매우 작은 모바일 스타일 */
+    .vip-banner {
+      padding: 15px;
+    }
+    
+    .vip-title {
+      font-size: 20px;
+    }
+    
+    .vip-highlight {
+      font-size: 14px;
+    }
+    
+    .vip-description {
+      font-size: 13px;
+    }
+    
+    .vip-benefit-item {
+      padding: 6px 12px;
+      font-size: 13px;
+    }
+    
+    .benefit-icon {
+      font-size: 14px;
+    }
+    
+    .mobile-review-title {
+      font-size: 16px;
+      padding: 0 10px;
+      margin-bottom: 10px;
+    }
+    
+    .review-item.board-item {
+      padding: 10px 12px;
+      margin: 0 5px 6px;
+    }
+    
+    .board-num {
+      top: 10px;
+      left: 10px;
+      width: 22px;
+      height: 22px;
+      font-size: 11px;
+    }
+    
+    .review-content.board-title {
+      padding-left: 28px;
+    }
+    
+    .review-content.board-title p {
+      font-size: 13px;
+      line-height: 1.3;
+    }
+    
+    .review-author-info.board-author {
+      margin-left: 28px;
+    }
+    
+    .review-author-name {
+      font-size: 11px;
+    }
+    
+    .review-date {
+      font-size: 10px;
+    }
+    
+    /* 게시판 스타일 추가 조정 */
+    .review-board-header {
+      font-size: 11px;
+    }
+    
+    .review-board-header .board-author {
+      width: 60px;
+    }
+    
+    .review-item.board-item {
+      padding: 8px 5px;
+    }
+    
+    .review-item.board-item .board-num {
+      width: 25px;
+      font-size: 11px;
+    }
+    
+    .review-item.board-item .review-content p {
+      font-size: 12px;
+      line-height: 1.3;
+    }
+    
+    .review-item.board-item .review-author-name {
+      font-size: 11px;
+    }
+    
+    .page-number, .page-arrow {
+      width: 25px;
+      height: 25px;
+      font-size: 12px;
+    }
+    
+    .search-select, .search-input, .search-button {
+      font-size: 13px;
+      padding: 7px;
+    }
+    
+    /* 푸터 추가 조정 */
+    .site-footer {
+      padding: 15px 0 70px;
+    }
+    
+    .footer-container {
+      padding: 0 15px;
+    }
+    
+    .footer-text {
+      font-size: 11px;
+      line-height: 1.4;
+    }
+    
+    .footer-logo .scoop-logo, 
+    .footer-logo .s-text, 
+    .footer-logo .p-text, 
+    .footer-logo .infinity-icon {
+      font-size: 20px;
+    }
+  }
+  
+  /* --------------------------------------
+     7. 380px 이하 화면 (초소형 모바일)
+     -------------------------------------- */
+  @media (max-width: 380px) {
+    .top-inner-header {
+      height: 50px;
+    }
+    
+    .scoop-logo, .s-text, .p-text, .infinity-icon {
+      font-size: 20px;
+    }
+    
+    .icon-btn {
+      width: 28px;
+      height: 28px;
+      font-size: 14px;
+    }
+    
+    .banner-section {
+      height: 200px !important;
+    }
+    
+    .slide-content {
+      padding-top: 20px;
+    }
+    
+    .slide-title {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    
+    .slide-subtitle {
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+    
+    .slide-pagination {
+      bottom: 12px;
+      left: 12px;
+      font-size: 11px;
+    }
+    
+    /* 매우 작은 모바일에서 매니저 섹션 더 작게 */
+    .manager-profile {
+      width: 80px;
+    }
+    
+    .profile-image {
+      width: 80px;
+      height: 110px;
+      margin-bottom: 2px;
+      border-radius: 5px;
+    }
+    
+    .profile-name {
+      font-size: 10px;
+    }
+    
+    .manager-profiles {
+      gap: 5px;
+    }
+    
+    .manager-scroll-btn {
+      width: 22px;
+      height: 22px;
+      font-size: 10px;
+    }
+    
+    .review-tab {
+      font-size: 17px;
+    }
+  }
+  
+  /* --------------------------------------
+     8. PC 버전 특수 조정
+     -------------------------------------- */
+  /* 피시버전 4개 배열 유지를 위한 스타일 추가 */
+  @media (min-width: 992px) {
+    .conference-grid {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: 25px !important;
+    }
+    
+    /* 이벤트 페이지 카드 3개 열 유지 */
+    .event-cards {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+  }
+  
+  /* PC에서는 스크롤 업 버튼의 위치 조정 */
+  @media (min-width: 769px) {
+    .scroll-to-top-btn {
+      bottom: 30px;
+      right: 30px;
+      left: auto; /* PC환경에서는 왼쪽 값을 초기화하고 오른쪽에 위치 */
+    }
+  }
